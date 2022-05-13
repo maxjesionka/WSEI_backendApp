@@ -1,0 +1,17 @@
+Prosta biblioteka filmowa
+1.	Przygotowanie wstęgo wyglądu aplikacji
+2.	Przygotowanie środowiska – instalacja (spring-maven-java)(dep.: spring web / lombok / jdbc  api / mySQL Driver) ew więcej w miare potrzeb.
+3.	Założenie bazy danych
+4.	podpięcie bazy danych do projektu
+5.	Stworzenie klasy wypełniającej baze danych
+6.	Utworzenie klasy do komunikacji z baza danych
+7.	Utworzenie metody wyswietlajacej liste filmow
+8.	Utworzenie metody do edycji filmu (put – edycja całej zawartosci)
+9.	Utworzenie metody do edycji filmu(patch – pojedynczej wartości)
+10.	Utworzenie metody do usuniecia filmu z bazy
+11.	Edycja bazy danych za pomocą postman’a
+12.	Konfiguracja przynajmniej 2 mikroservisów komunikujących się ze sobą
+13.	Stworzenie interface’u aplikacji
+14.	Testowanie aplikacji
+15.	Stworzenie aplikacji boot’ującej
+16.	Stworzenie opisu obsługi aplikacji
