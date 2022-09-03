@@ -2,6 +2,7 @@ package pl.max.bookapp;
 
 import java.time.LocalDate;
 
+
 public class Book {
 
     private Long id;
