@@ -1,9 +1,6 @@
 package pl.max.bookapp;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -31,5 +28,19 @@ public class BookApi {
     public Book getById(@RequestParam int index) {
         Optional<Book> first = Books.stream().filter(element -> element.getId() == index).findFirst();
         return first.get();
+    }
+
+    @PostMapping
+    public boolean addBook(@RequestBody Book book) {
+        return Books.add(book);
+    }
+
+    @PutMapping
+    public boolean updateBook(@RequestBody Book book) {
+        return Books.add(book);
+    }
+    @DeleteMapping
+    public boolean deleteBook(@RequestParam int index) {
+        return Books.removeIf(element -> element.getId() == index);
     }
 }
