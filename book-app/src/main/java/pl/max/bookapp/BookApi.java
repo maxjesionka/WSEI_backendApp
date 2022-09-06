@@ -1,5 +1,6 @@
 package pl.max.bookapp;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -13,34 +14,34 @@ import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 @RequestMapping("/api/books")
 public class BookApi {
 
-    private List<Book> Books;
+  private BookManager books;
 
-    public BookApi() {
-        Books = new ArrayList<>();
-        Books.add(new Book(1L,"Ja inkwizytor",LocalDate.of(2005,12,3)));
-        Books.add(new Book(2L,"Ja inkwizytor - młot na czarownice",LocalDate.of(2009,2,21)));
+  @Autowired
+    public BookApi(BookManager books) {
+        this.books = books;
     }
+
     @GetMapping("/all")
-    public List<Book> getAll() {
-        return Books;
+    public Iterable<Book> getAll() {
+        return books.findALL();
     }
     @GetMapping
-    public Book getById(@RequestParam int index) {
-        Optional<Book> first = Books.stream().filter(element -> element.getId() == index).findFirst();
-        return first.get();
+    public Optional<Book> getById(@RequestParam Long index) {
+
+        return books.findById(index);
     }
 
     @PostMapping
-    public boolean addBook(@RequestBody Book book) {
-        return Books.add(book);
+    public Book addBook(@RequestBody Book book) {
+        return books.save(book);
     }
 
     @PutMapping
-    public boolean updateBook(@RequestBody Book book) {
-        return Books.add(book);
+    public Book updateBook(@RequestBody Book book) {
+        return books.save(book);
     }
     @DeleteMapping
-    public boolean deleteBook(@RequestParam int index) {
-        return Books.removeIf(element -> element.getId() == index);
+    public void deleteBook(@RequestParam Long index) {
+        books.deleteById(index);
     }
 }
