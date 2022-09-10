@@ -30,7 +30,6 @@ public class BookApi {
 
         return books.findById(index);
     }
-
     @PostMapping
     public Book addBook(@RequestBody Book book) {
         return books.save(book);

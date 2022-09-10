@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDate;
+import java.time.Year;
 
 @Entity
 public class Book {
@@ -15,12 +16,12 @@ public class Book {
 
     private String title;
 
-    private LocalDate productionYear;
+    private Year productionYear;
 
     public Book() {
     }
 
-    public Book(Long id, String title, LocalDate productionYear){
+    public Book(Long id, String title, Year productionYear){
         this.id = id;
         this.title = title;
         this.productionYear = productionYear;
@@ -43,11 +44,11 @@ public class Book {
         this.title = title;
     }
 
-    public LocalDate getProductionYear() {
+    public Year getProductionYear() {
         return productionYear;
     }
 
-    public void setProductionYear(LocalDate productionYear) {
+    public void setProductionYear(Year productionYear) {
         this.productionYear = productionYear;
     }
 }

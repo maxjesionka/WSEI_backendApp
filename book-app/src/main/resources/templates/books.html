@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>pog</p>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Nazwa ksiazki</th>
+    <th>Rok wydania</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="Book: ${booksConnection}">
+    <td th:text="${Book.id}" />
+    <td th:text="${Book.title}" />
+    <td th:text="${Book.productionYear}" />
+  </tr>
+  </tbody>
+</table><br>
+
+<form action="/dodawanie" method="post">
+  <p>Wprowadź książkę</p>
+  <input type="text" name="title">
+  <input type="int" name="productionYear">
+  <input type="submit"></input>
+</form>
+
+
+
+</body>
+</html>

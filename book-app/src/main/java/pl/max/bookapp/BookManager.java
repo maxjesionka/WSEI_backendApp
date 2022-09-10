@@ -6,6 +6,7 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.Year;
 import java.util.Optional;
 
 @Service
@@ -17,7 +18,6 @@ public class BookManager {
     public BookManager(BookRepo bookRepo) {
         this.bookRepo = bookRepo;
     }
-
 
     public Optional<Book> findById(Long id) {
         return bookRepo.findById(id);
@@ -37,8 +37,8 @@ public class BookManager {
 
     @EventListener(ApplicationReadyEvent.class)
     public void fillDB(){
-    save(new Book(1L,"Ja inkwizytor", LocalDate.of(2005,12,3)));
-    save(new Book(2L,"Ja inkwizytor - młot na czarownice",LocalDate.of(2009,2,21)));
+    save(new Book(1L,"Ja inkwizytor", Year.of(2005)));
+    save(new Book(2L,"Ja inkwizytor - młot na czarownice", Year.of(2009)));
 
     }
 }
