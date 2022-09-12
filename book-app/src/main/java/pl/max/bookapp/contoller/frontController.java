@@ -1,15 +1,13 @@
-package pl.max.bookapp;
+package pl.max.bookapp.contoller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-
-import java.util.List;
+import pl.max.bookapp.Book;
+import pl.max.bookapp.repository.BookRepo;
 
 @Controller
 public class frontController {
@@ -37,6 +35,6 @@ public class frontController {
     @RequestMapping("/dodawanie")
     public String dataAdding(Book book){
         bookRepo.save(book);
-        return "books";
+        return "succes";
     }
 }

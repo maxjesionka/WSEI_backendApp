@@ -1,4 +1,4 @@
-package pl.max.bookapp;
+package pl.max.bookapp.repository;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

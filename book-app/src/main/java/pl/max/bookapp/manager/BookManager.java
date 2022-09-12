@@ -1,11 +1,12 @@
-package pl.max.bookapp;
+package pl.max.bookapp.manager;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
+import pl.max.bookapp.Book;
+import pl.max.bookapp.repository.BookRepo;
 
-import java.time.LocalDate;
 import java.time.Year;
 import java.util.Optional;
 
