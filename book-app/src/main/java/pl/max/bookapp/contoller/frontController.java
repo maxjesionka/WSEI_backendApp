@@ -16,10 +16,10 @@ public class frontController {
     BookRepo bookRepo;
 
 
-//@RequestMapping("/example")
-//public String index() {
-//    return "xd.html";
-//}
+@RequestMapping("/example")
+public String index() {
+    return "xd.html";
+}
 
 
     @GetMapping("/booksShow")
